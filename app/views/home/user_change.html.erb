@@ -1,10 +1,20 @@
 <%= form_tag('/home/change', method: :post) do %>
-  <p>Student ID</p>
-  <input type="number" name="id" value="<%= @user.id %>" >
+
+  <div class="form-group">
+    <p>Student ID</p>
+    <input type="number" name="id" value="<%= @user.id %>" >
+  </div>
+
+  <div class="form-group">
     <p>Student Name</p>
-  <input type="text" name="name" value="<%= @user.name %>" >
+    <input type="text" name="name" value="<%= @user.name %>" class="form-control" >
+  </div>
+
     <p>Student Email</p>
-  <input type="text" name="email" value="<%= @user.email %>">
+  <input type="text" name="email" value="<%= @user.email %>" class="form- control" >
+
+    <p>Password</p>
+    <input type="text" name="password" value="<%= @user.email %>" class="form- control" >
     <p>Payment</p>
   <% if @user.payment==true %>
   <input type="radio" name="payment" value=true checked="checked" />Paid
@@ -14,11 +24,11 @@
   <input type="radio" name="payment" value=false checked="checked"  />Not yet or Not now
   <% end %>
     <p>Stripe ID</p>
-  <input type="text" name="stripe_id" value="<%= @user.stripe_id %>">
+  <input type="text" name="stripe_id" value="<%= @user.stripe_id %>" class="form-control" >
   <p>Stripe Email</p>
-  <input type="text" name="stripe_email" value="<%= @user.stripe_email %>">
+  <input type="text" name="stripe_email" value="<%= @user.stripe_email %>" class="form-control" >
   <p>Subscription ID</p>
-  <input type="text" name="subscription_id" value="<%= @user.subscription_id %>">
+  <input type="text" name="subscription_id" value="<%= @user.subscription_id %>" class="form-control" >
   <p>Admin</p>
   <% if @user.admin==true %>
   <input type="radio" name="admin" value=true checked="checked" />Admin
