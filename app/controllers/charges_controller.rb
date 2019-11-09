@@ -20,6 +20,7 @@ class ChargesController < ApplicationController
       current_user.subscription_id = subscription.id
       current_user.stripe_email = customer.email
       current_user.payment = true
+      current_user.save
 
       redirect_to  home_about_path
 
