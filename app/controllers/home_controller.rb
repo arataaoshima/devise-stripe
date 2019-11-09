@@ -25,4 +25,6 @@ class HomeController < ApplicationController
     @user.save
     redirect_to "/home/index"
   end
+
+
 end

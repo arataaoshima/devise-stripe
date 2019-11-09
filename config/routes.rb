@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
   resources :posts
+  post "charges/unsubscribe"
   resources :charges
 
   devise_for :users, controllers: {
-    omniauth_callbacks: "users/omniauth_callbacks"
+    omniauth_callbacks: "users/omniauth_callbacks",
+    registrations: 'users/registrations'
   }
 
   root to: 'home#top'

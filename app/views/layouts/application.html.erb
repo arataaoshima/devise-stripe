@@ -12,6 +12,9 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <%= yield %>
+    <div class="container">
+      <%= render 'layouts/alert' %>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -29,4 +29,19 @@ class ChargesController < ApplicationController
       redirect_to new_charge_path
   end
 
+  def unsubscribe
+
+    subscription = Stripe::Subscription.update(
+    current_user.subscription_id,
+    {
+      cancel_at_period_end: true,
+    })
+
+    current_user.payment = false
+    current_user.save
+
+    redirect_to new_charge_path
+
+end
+
 end
