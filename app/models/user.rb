@@ -30,5 +30,11 @@ class User < ApplicationRecord
     clean_up_passwords
     result
     end
-    
+
+    after_create :send_welcome_mail
+
+    def send_welcome_mail
+    UserMailer.user_welcome_mail(self).deliver
+    end
+
 end
